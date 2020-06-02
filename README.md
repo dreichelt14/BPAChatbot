@@ -2,6 +2,8 @@
 
 Praktikumbeispiel fuer Kommilitonen
 
+Dieser Bot basiert auf einen Beispiel von 
+
 This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to:
 
 - Use [LUIS](https://www.luis.ai) to implement core AI capabilities

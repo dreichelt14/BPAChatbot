@@ -13,7 +13,7 @@
       "spacing": "medium",
       "size": "default",
       "weight": "bolder",
-      "text": "Welcome to BPA Chatbot!",
+      "text": "Herzlich Willkommen! Hier ist der Chatbot Termini!",
       "wrap": true,
       "maxLines": 0
     },
@@ -21,7 +21,7 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "Now that you have successfully run your bot, follow the links in this Adaptive Card to expand your knowledge of Bot Framework.",
+      "text": "Ich organisiere Termine und bin sehr minimalistisch. Ich und Luis, mein treues NLP-System, helfen dir Termine zu organisieren. Bevor du startest, empfehle ich persönlich folgende Links:",
       "wrap": true,
       "maxLines": 0
     }
