@@ -1,4 +1,4 @@
-# ChatBot für BPA
+# Chatbot für BPA
 
 Praktikumsbeispiel Chatbots
 
@@ -15,13 +15,16 @@ Praktikumsbeispiel Chatbots
 
 ## Installation
 
-- Install modules
+- Module instalieren
 
     ```bash
     npm install
     ```
-- Die Datei `.env` ins Rootverzeichnis kopieren
-- Projekt mit `npm start` ausführen
+- Datei `.env` ins Rootverzeichnis kopieren
+- Projekt starten mit
+    ```bash
+    npm start
+    ```
 
 ### Verbindung mit dem Chatbot
 
