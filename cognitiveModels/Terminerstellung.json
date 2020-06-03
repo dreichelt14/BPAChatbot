@@ -69,6 +69,13 @@
         }
       ],
       "roles": []
+    },
+    {
+      "name": "Thema",
+      "subLists": [
+        
+      ],
+      "roles": []
     }
   ],
   "patternAnyEntities": [],
@@ -109,8 +116,8 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 18,
-          "endPos": 27
+          "startPos": 17,
+          "endPos": 25
         }
       ]
     },
@@ -120,8 +127,8 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 18,
-          "endPos": 27
+          "startPos": 17,
+          "endPos": 25
         }
       ]
     },
@@ -151,13 +158,13 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 18,
-          "endPos": 27
+          "startPos": 17,
+          "endPos": 25
         },
         {
           "entity": "zum",
-          "startPos": 32,
-          "endPos": 36
+          "startPos": 31,
+          "endPos": 35
         }
       ]
     },
@@ -167,8 +174,8 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 18,
-          "endPos": 28
+          "startPos": 17,
+          "endPos": 27
         }
       ]
     },
@@ -178,13 +185,13 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 18,
-          "endPos": 27
+          "startPos": 17,
+          "endPos": 25
         },
         {
           "entity": "zum",
-          "startPos": 37,
-          "endPos": 41
+          "startPos": 36,
+          "endPos": 39
         }
       ]
     },
@@ -229,8 +236,8 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 16,
-          "endPos": 26
+          "startPos": 15,
+          "endPos": 24
         }
       ]
     },
@@ -240,13 +247,13 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 11,
-          "endPos": 18
+          "startPos": 10,
+          "endPos": 17
         },
         {
           "entity": "zum",
-          "startPos": 23,
-          "endPos": 29
+          "startPos": 22,
+          "endPos": 27
         }
       ]
     },
@@ -256,13 +263,13 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 26,
-          "endPos": 38
+          "startPos": 25,
+          "endPos": 36
         },
         {
           "entity": "zum",
-          "startPos": 43,
-          "endPos": 55
+          "startPos": 42,
+          "endPos": 54
         }
       ]
     },
@@ -272,8 +279,8 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 20,
-          "endPos": 32
+          "startPos": 19,
+          "endPos": 30
         }
       ]
     },
@@ -283,13 +290,13 @@
       "entities": [
         {
           "entity": "mit",
-          "startPos": 17,
-          "endPos": 25
+          "startPos": 16,
+          "endPos": 23
         },
         {
           "entity": "zum",
-          "startPos": 30,
-          "endPos": 44
+          "startPos": 29,
+          "endPos": 42
         }
       ]
     },
