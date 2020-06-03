@@ -83,13 +83,12 @@ class MainDialog extends ComponentDialog {
             // Extract the values for the composite entities from the LUIS result.
             const topicEntities = this.luisRecognizer.getTopicEntities(luisResult);
             const personEntities = this.luisRecognizer.getPersonEntities(luisResult);
-
             // Show a warning for Topic and Destination if we can't resolve them.
             await this.showWarningForUnsupportedCities(stepContext.context, topicEntities, personEntities);
 
-            // Initialize BookingDetails with any entities we may have found in the response.
-            terminDetails.person = personEntities.airport;
-            terminDetails.topic = topicEntities.airport;
+            // Initialize TerminDetails with any entities we may have found in the response.
+            terminDetails.person = personEntities.Person;
+            terminDetails.betreff = topicEntities.Thema;
             terminDetails.terminDate = this.luisRecognizer.getTerminDate(luisResult);
             console.log('LUIS hat mir geholfen folgende Terminanfrage zu verstehen:', JSON.stringify(terminDetails));
 
@@ -119,18 +118,15 @@ class MainDialog extends ComponentDialog {
      * In some cases LUIS will recognize the From and To composite entities as a valid cities but the From and To Airport values
      * will be empty if those entity values can't be mapped to a canonical item in the Airport.
      */
-    async showWarningForUnsupportedCities(context, fromEntities, toEntities) {
-        const unsupportedCities = [];
-        if (fromEntities.from && !fromEntities.airport) {
-            unsupportedCities.push(fromEntities.from);
+    async showWarningForUnsupportedCities(context, topicEntities, personEntities) {
+        const unsupportedPersonen = [];
+        console.log("Tut");
+        if (personEntities.mit && !personEntities.Person) {
+            unsupportedPersonen.push(personEntities.mit);
         }
 
-        if (toEntities.to && !toEntities.airport) {
-            unsupportedCities.push(toEntities.to);
-        }
-
-        if (unsupportedCities.length) {
-            const messageText = `Sorry aber ich kenne diese Person nicht: ${ unsupportedCities.join(', ') }`;
+        if (unsupportedPersonen.length) {
+            const messageText = `Sorry aber ich kenne diese Person nicht: ${ unsupportedPersonen.join(', ') }`;
             await context.sendActivity(messageText, messageText, InputHints.IgnoringInput);
         }
     }

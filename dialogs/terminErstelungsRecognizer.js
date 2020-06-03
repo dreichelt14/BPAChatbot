@@ -30,27 +30,19 @@ class TerminErstelungsRecognizer {
     }
 
     getTopicEntities(result) {
-        let zumValue, zumThemaValue;
+        let zumThemaValue;
         if (result.entities.$instance.zum) {
-            zumValue = result.entities.$instance.zum[0].text;
+            zumThemaValue = result.entities.$instance.zum[0].text;
         }
-        if (zumValue && result.entities.zum[0].zumThemaValue) {
-            zumThemaValue = result.entities.zum[0].Thema[0][0];
-        }
-
-        return { zum: zumValue, Thema: zumThemaValue };
+        return { Thema: zumThemaValue };
     }
 
     getPersonEntities(result) {
-        let mitValue, mitPersonValue;
+        let mitPersonValue;
         if (result.entities.$instance.mit) {
-            mitValue = result.entities.$instance.To[0].text;
+            mitPersonValue = result.entities.$instance.mit[0].text;
         }
-        if (mitValue && result.entities.mit[0].Person) {
-            mitPersonValue = result.entities.mit[0].Person[0][0];
-        }
-
-        return { mit: mitValue, Person: mitPersonValue };
+        return { Person: mitPersonValue };
     }
 
     /**
