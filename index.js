@@ -22,7 +22,7 @@ const { TerminErstelungsRecognizer } = require('./dialogs/terminErstelungsRecogn
 const { DialogAndWelcomeBot } = require('./bots/dialogAndWelcomeBot');
 const { MainDialog } = require('./dialogs/mainDialog');
 
-// the bot's booking dialog
+// the bot's Appointment dialog
 const { TerminDialog } = require('./dialogs/terminDialog');
 const TERMIN_DIALOG = 'terminDialog';
 

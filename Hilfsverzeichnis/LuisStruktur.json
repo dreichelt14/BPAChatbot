@@ -1,0 +1,50 @@
+{
+    "recognizerResult": {
+      "entities": {
+        "$instance": {
+          "zum": [
+            {
+              "endIndex": 39,
+              "modelType": "Composite Entity Extractor",
+              "recognitionSources": [
+                "model"
+              ],
+              "startIndex": 36,
+              "text": "BPA",
+              "type": "zum"
+            }
+          ],
+          "mit": [
+            {
+              "endIndex": 15,
+              "modelType": "Composite Entity Extractor",
+              "recognitionSources": [
+                "model"
+              ],
+              "startIndex": 11,
+              "type": "mit"
+            }
+          ]
+        },
+        "Person": [
+          [
+            "Herr Reichelt"
+          ]
+        ],
+        "datetime": [
+          {
+            "timex": [
+              "2020-07-22"
+            ],
+            "type": "date"
+          }
+        ]
+      },
+      "intents": {
+        "TerminMachen": {
+          "score": 0.9810957
+        }
+      },
+      "text": "Termin mit Prof. Reichelt zum Thema BPA am 22. Juli 2020"
+    }
+  }

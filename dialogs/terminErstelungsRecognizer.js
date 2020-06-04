@@ -29,20 +29,28 @@ class TerminErstelungsRecognizer {
         return await this.recognizer.recognize(context);
     }
 
+    //Die von LUIS bekommenen Ergebnisse sind in result gespeichert.
+    //Die vereinfachte Beispielstruktur von result ist im Hilfsverzeichnis/LuisStruktur zu finden. 
+    //Bitte beachten, dass Person und Betreff sich auf verschiedenen Ebenen der result befinden.
+    //Solche Strucktur war notwendig, um in Teams zu funktionieren.
+    /**
+    * @todo  Person und Betreff Entitäten im Variablen ThemaValue und PersonValue speichern.
+    *  
+    */
     getTopicEntities(result) {
-        let zumThemaValue;
+        let ThemaValue;
         if (result.entities.$instance.zum) {
-            zumThemaValue = result.entities.$instance.zum[0].text;
+            ThemaValue = "";
         }
-        return { Thema: zumThemaValue };
+        return { Thema: ThemaValue };
     }
 
     getPersonEntities(result) {
-        let mitPersonValue;
+        let PersonValue;
         if (result.entities.$instance.mit) {
-            mitPersonValue = result.entities.$instance.mit[0].text;
+            PersonValue = "";
         }
-        return { Person: mitPersonValue };
+        return { Person: PersonValue };
     }
 
     /**

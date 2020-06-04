@@ -3,8 +3,8 @@
 Praktikumsbeispiel Chatbots
 
 ## Aufgabenstellung
-
-
+- Auf der letzten Etappe des Hauptdialogs (finalStep) müsste unser Chatbot  über MS Teams eine Terminanfrage an den Empfänger senden. In der lokalen Variante des Chatbots bitte stattdessen eine Bestätigung eines erfolgreichen Absendens des Terminvorschlags im Chat darstellen. Die Bestätigung sollte den Empfänger, das Datum und Betreff beinhalten.
+- Recogniser bekommt von LUIS mittels Methoden “getTopicEntities” und “getPersonEntities” erkannte Personen und Themen. Ergänzen Sie diese zwei Methoden, um die gewünschte Funktionalität zu gewährleisten. 
 
 ## Beschreibung
 

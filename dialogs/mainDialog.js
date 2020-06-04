@@ -2,7 +2,8 @@
 // Licensed under the MIT License.
 
 const { TimexProperty } = require('@microsoft/recognizers-text-data-types-timex-expression');
-const { MessageFactory, InputHints } = require('botbuilder');
+const { MessageFactory, InputHints, TeamsInfo} = require('botbuilder');
+//const { TurnContext, MessageFactory, TeamsInfo, TeamsActivityHandler, CardFactory, ActionTypes} = require('botbuilder');
 const { LuisRecognizer } = require('botbuilder-ai');
 const { ComponentDialog, DialogSet, DialogTurnStatus, TextPrompt, WaterfallDialog } = require('botbuilder-dialogs');
 
@@ -114,13 +115,12 @@ class MainDialog extends ComponentDialog {
     }
 
     /**
-     * Shows a warning if the requested From or To cities are recognized as entities but they are not in the Airport entity list.
-     * In some cases LUIS will recognize the From and To composite entities as a valid cities but the From and To Airport values
-     * will be empty if those entity values can't be mapped to a canonical item in the Airport.
+     * Shows a warning if the requested Person is recognized as entitie but they are not in the Person entity list.
+     * In some cases LUIS will recognize the "mit" composite entities as a valid Person but the "mit" value
+     * will be empty if those entity values can't be mapped to a canonical item in the "Person".
      */
     async showWarningForUnsupportedCities(context, topicEntities, personEntities) {
         const unsupportedPersonen = [];
-        console.log("Tut");
         if (personEntities.mit && !personEntities.Person) {
             unsupportedPersonen.push(personEntities.mit);
         }
@@ -133,20 +133,44 @@ class MainDialog extends ComponentDialog {
 
     /**
      * This is the final step in the main waterfall dialog.
-     * It wraps up the sample "book a flight" interaction with a simple confirmation.
+     * It wraps up the sample "Termin erstellen" interaction with a simple confirmation.
      */
     async finalStep(stepContext) {
         // If the child dialog ("TerminDialog") was cancelled or the user failed to confirm, the Result here will be null.
         if (stepContext.result) {
             const result = stepContext.result;
-            // Now we have all the booking details.
+            // Now we have all the appointment details.
+            // This is where calls to the service or database would go.
+            // If the call to the service was successful tell the user.
+                        
+            //Auskommentierte Teil ist nur für Implementierung in MS Teams geeignet.
+            /*var member;
+            try {
+                member = await TeamsInfo.getMember(stepContext.context, stepContext.context.activity.from.id);
+            } catch (e) {
+                if (e.code === 'MemberNotFoundInConversation') {
+                    stepContext.context.sendActivity(MessageFactory.text('Member not found.'));
+                    return;
+                } else {
+                    console.log(e);
+                    throw e;
+                }
+            }                    
+            const msgTeams = `Dieser Vorschlag wurde mit dem Namen ${ member.name } abgesendet`;
+            */
 
-            // This is where calls to the booking AOU service or database would go.
-
-            // If the call to the booking service was successful tell the user.
-            const timeProperty = new TimexProperty(result.travelDate);
-            const travelDateMsg = timeProperty.toNaturalLanguage(new Date(Date.now()));
-            const msg = `Ich habe einen Terminforschlag an ${ result.destination } zum Thema ${ result.origin } für den ${ travelDateMsg } erstellt.`;
+            //String msg wird dem Benutzer als Bestätigung geschickt.
+            //alle Informationen bezuglich des Termins sind in Variable result enthalten. 
+            //Die im result gespeicherten Enntitäten wurden in der Methode actStep() des Hauptdialoges zugewiesen.
+            //Um die korrekte Schreibweise im result gespeicherter Entitäten rauszufinden, ist es nützlich, die Methode actStep() anzuschauen.  
+            //Achtung!! Termindatum ist schon in der Variable terminDateMsg vorhanden.
+            const timeProperty = new TimexProperty(result.terminDate);
+            const terminDateMsg = timeProperty.toNaturalLanguage(new Date(Date.now()));
+            //const msg = "";
+            /**
+            * @todo Die Bestätigung der Terminanfrage dem Benutzer anzeigen.
+            */
+            const msg = ``;
             await stepContext.context.sendActivity(msg, msg, InputHints.IgnoringInput);
         }
 

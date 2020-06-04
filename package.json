@@ -2,7 +2,7 @@
     "name": "ChatBotBPA",
     "version": "1.0.0",
     "description": "Praktikumbeispiel fuer Kommilitonen",
-    "author": "Generated using Microsoft Bot Builder Yeoman generator v4.9.0",
+    "author": "Generated using Microsoft Bot Builder Yeoman generator v4.9.0, von BPAChatbotTeam bearbeitet",
     "license": "MIT",
     "main": "index.js",
     "scripts": {
